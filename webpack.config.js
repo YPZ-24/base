@@ -4,6 +4,7 @@ const path = require('path');
 const NodemonPlugin = require('nodemon-webpack-plugin');
 
 module.exports = {
+  target: 'node',
   entry: './src/index.js',
   output: {
     filename: 'index.js',
