@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors';
-import userRoute from './routes/user.routes'
+import userApi from './routes/user.routes'
 import config from './config/config'
 import errorMiddleware from './util/errorMiddleware'
 
@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.urlencoded({extended: false}))
 
 //ROUTES
-app.use('/api/users', userRoute)
+userApi(app)
 
 //ERROR MIDDLEWARE
 app.use(errorMiddleware)

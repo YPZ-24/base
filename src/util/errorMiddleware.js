@@ -5,6 +5,6 @@ export default function errorMiddleware(error, req, res, next) {
         name: 'UnknownError',
         message: 'Internal Error'
     }
-
+    console.log(error);
     res.status(errorObject.status).json(errorObject)
 }
