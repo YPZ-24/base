@@ -1,5 +1,7 @@
 import {Router} from 'express'
 import UserService from '../services/users'
+import {createUserSchema, updateUserSchema} from '../utils/schemas/users'
+import validationHandler from '../utils/middleware/validationHandler'
 
 function userApi(app){
     const router = Router()
@@ -32,7 +34,7 @@ function userApi(app){
         }
     })
 
-    router.post('/', async (req, res, next)=>{
+    router.post('/', validationHandler(createUserSchema), async (req, res, next)=>{
         try{
             const user = req.body;
             const createdUserId = await userService.createUser({user})
@@ -45,7 +47,7 @@ function userApi(app){
         }
     })
 
-    router.put('/:userId', async (req, res, next)=>{
+    router.put('/:userId', validationHandler(updateUserSchema), async (req, res, next)=>{
         try{
             const {userId} = req.params
             const user = req.body;

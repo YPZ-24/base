@@ -23,9 +23,11 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@hapi/boom": "^9.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^3.6.5",
-    "mongoose": "^5.12.3"
+    "mongoose": "^5.12.3",
+    "yup": "^0.32.9"
   }
 }
