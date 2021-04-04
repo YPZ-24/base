@@ -22,7 +22,7 @@ class MongoLib {
             MongoLib.connection = new Promise((resolve, reject)=>{
                 this.client.connect(error=>{
                     if(error) return reject(error)
-                    console.log("DB Started")
+                    console.log("DB Connected")
                     resolve(this.client.db(this.dbName))
                 })
             })
