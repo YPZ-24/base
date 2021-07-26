@@ -13,9 +13,9 @@ class UsersService {
         return users || []
     }
 
-    async getUser({userId}){
-        const user = await this.mongoDB.get(this.collection, userId);
-        return user || {}
+    async getUser({query, projection}){
+        const user = await this.mongoDB.get(this.collection, query, projection);
+        return user || null
     }
 
     async createUser({user}){
@@ -23,7 +23,7 @@ class UsersService {
         return createdUserId
     }
 
-    async updateUser({user, userId}){
+    async updateUser({userId, user}){
         const updatedUserId = await this.mongoDB.update(this.collection, userId, user);
         return updatedUserId
     }

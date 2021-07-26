@@ -36,9 +36,9 @@ class MongoLib {
         })
     }
 
-    get(collection, id){
+    get(collection, query, projection = {}){
         return this.connect().then(db=>{
-            return db.collection(collection).findOne({_id: ObjectId(id)})
+            return db.collection(collection).findOne(query, {projection})
         })
     }
 

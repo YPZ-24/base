@@ -24,10 +24,19 @@
   },
   "dependencies": {
     "@hapi/boom": "^9.1.2",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.5",
+    "mongodb-client-encryption": "^1.2.6",
     "mongoose": "^5.12.3",
+    "nodemailer": "^6.6.3",
+    "npm": "^7.20.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "webpack-node-externals": "^3.0.0",
     "yup": "^0.32.9"
   }
 }

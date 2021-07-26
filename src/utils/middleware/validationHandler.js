@@ -1,12 +1,13 @@
 import boom from '@hapi/boom'
 
-function validationHandler(schema, check='body'){
-    return function(req, res, next){
-        schema.validate(req[check], {strict: true}).then(()=>{
-            next()
-        }).catch((error)=>{
-            next(boom.badRequest(error))
-        })
+function validationHandler(validation){
+    return async (req, res, next) => {
+        try{
+            await validation(req);
+            next();
+        }catch(error){
+            next( boom.badRequest(error) );
+        }
     }
 }
 

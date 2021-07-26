@@ -1,6 +1,7 @@
 const boom = require('@hapi/boom')
 
 export function wrapError(error, req, res, next){
+    console.log(error)
     if(!error.isBoom){
         next(boom.badImplementation(error));
     }
